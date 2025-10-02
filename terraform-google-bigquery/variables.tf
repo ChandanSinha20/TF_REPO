@@ -91,9 +91,9 @@ variable "tables" {
 
 variable "storage_billing_model" {
   description = "specifies the storage billing model for the dataset. set this flag value to use LOGICAL to use logical bytes for storage billing, or to physical bytes instead. LOGICAL is the default if this flag isn't speicifed."
-  type = string
-  default = null
-  
+  type        = string
+  default     = null
+
 }
 
 variable "sensitive_params" {
@@ -101,77 +101,77 @@ variable "sensitive_params" {
     secret_access_key = string
   }))
   default = {}
-  }
+}
 variable "email_preferences" {
   type = map(object({
     enable_failure_email = bool
   }))
   default = {}
-  
+
 }
 
 variable "schedule_options" {
   type = map(object({
     disable_auto_scheduling = bool
-    start_time = string
-    end_time = string
+    start_time              = string
+    end_time                = string
   }))
   default = {}
-  
+
 }
- 
+
 variable "params" {
   description = "parameter specific to each data source"
-  type = map(any)
-  default = {}
-  
+  type        = map(any)
+  default     = {}
+
 }
 
 variable "service_account_name" {
   description = "Bigquery scheduled query display name"
-  type = string
-  default = null
-  
+  type        = string
+  default     = null
+
 }
 
 variable "display_name" {
   description = "Bigquery scheduled query display name"
-  type = string
-  default = null
-  
+  type        = string
+  default     = null
+
 }
 
 variable "data_source_id" {
   description = "Data source ID"
-  type = string
-  default = "scheduled_query"  
+  type        = string
+  default     = "scheduled_query"
 }
 
 variable "destination_dataset_id" {
   description = "Destination table name"
-  type = string
-  default = null
+  type        = string
+  default     = null
 }
 variable "data_refresh_window_days" {
   description = "The number of days to look back to automatically refresh the data"
-  type = string
-  default = null   
- }
+  type        = string
+  default     = null
+}
 
 variable "schedule" {
   description = "schedule for the query"
-  type = string
-  default = null
-  
+  type        = string
+  default     = null
+
 }
 
 variable "disabled" {
   description = "the number of days to look back to automatically refresh the data"
-  type = string
-  default = null
-  }
+  type        = string
+  default     = null
+}
 variable "notification_pubsub_topic" {
   description = "pubsub topic name for notification"
-  type = string
-  default = null
+  type        = string
+  default     = null
 }
